@@ -5,6 +5,8 @@
 <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
 <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
 
+<!-- // DogiABI = ... -->
+<script src="DogiABI.js"></script>
 
 <div id="Doggy">
   <div>
@@ -16,6 +18,14 @@
   <script>
     function createContract() {
       // make a web3 call with {{ person }}, {{ walker }}, {{ datetime }}
+
+      // handle missing Metamask/...
+      Web3 = require('web3');
+      web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+
+      // get ABI from https://github.com/DoggyWalkie/eth-contract/blob/0757bb050262ff40bcc6fc6ecba439f4700bce49/build/contracts/Dogi.json#L3-L533
+      abi = JSON.parse();
+     
     }
   </script>
  
