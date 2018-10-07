@@ -1,0 +1,33 @@
+<title>DoggyWalkie</title>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+<script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+
+
+<div id="Doggy">
+  <div>
+    {{ person }} wants somebody to walk with his {{ doug }}
+    on {{ date(datetime) }} from {{ time(datetime) }} to {{ endtime(datetime) }}.
+  </div>
+  <button>I can do this!</button>
+
+  <script>
+    function createContract() {
+      // make a web3 call with {{ person }}, {{ walker }}, {{ datetime }}
+    }
+  </script>
+ 
+<script>
+  new Vue({
+    el: '#Walkie',
+    data: {
+      doug: "",
+      person: "",
+      walker: "",
+      datetime: "",
+      pickerhide: true,
+    }
+  })
+</script>
