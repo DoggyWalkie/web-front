@@ -31,6 +31,8 @@
       web3 = new Web3(web2.currentProvider);
 
       contradogi = web3.eth.contract(DogiABI);
+      // https://kovan.etherscan.io/address/0xf4a1f285b2b539b629f8d3c8c66a63977cd0a03
+      doginstance = contradogi.at('0xf4a1f285b2b539b629f8d3c8c66a63977cd0a030');
 
       console.log('creating contract between people..');
     }
