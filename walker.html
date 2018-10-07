@@ -8,25 +8,31 @@
 <!-- // DogiABI = ... -->
 <script src="DogiABI.js"></script>
 
+<!-- // Web3 -->
+<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+
+
 <div id="Walkie">
   <div>
     {{ person }} wants somebody to walk with his {{ breed }} called {{ doug }}
     on {{ date }} from {{ time }} to {{ time }}+1H.
   </div>
-  <button>I can do this!</button>
+  <button onclick="createContract()">I can do this!</button>
 </div>
 
   <script>
+    // call smart contract to create real contract between people
     function createContract() {
       // make a web3 call with {{ person }}, {{ walker }}, {{ datetime }}
 
-      // handle missing Metamask/...
-      Web3 = require('web3');
-      web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+      // TODO: handle missing Metamask/...
+      //web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+      web2 = new Web3();
+      web3 = new Web3(web2.currentProvider);
 
-      // get ABI from https://github.com/DoggyWalkie/eth-contract/blob/0757bb050262ff40bcc6fc6ecba439f4700bce49/build/contracts/Dogi.json#L3-L533
-      abi = JSON.parse();
-     
+      contradogi = web3.eth.contract(DogiABI);
+
+      console.log('creating contract between people..');
     }
   </script>
  
@@ -38,7 +44,7 @@
       breed: "Labrador",
       person: "Anatoly",
       walker: "",
-      date: "20181007",
+      date: "2018-10-07",
       time: "18:00",
       pickerhide: true,
     }
