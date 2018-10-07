@@ -27,8 +27,7 @@
 
       // TODO: handle missing Metamask/...
       //web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-      web2 = new Web3();
-      web3 = new Web3(web2.currentProvider);
+      web3 = new Web3(window.web3.currentProvider);
 
       contradogi = web3.eth.contract(DogiABI);
       // https://kovan.etherscan.io/address/0xf4a1f285b2b539b629f8d3c8c66a63977cd0a03
