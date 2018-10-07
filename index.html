@@ -1,0 +1,32 @@
+<title>DoggyWalkie</title>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+<script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+
+
+<div id="Doggy">
+  <button @click="pickerhide=false">I need smb. to walk my doug</button>
+
+  <b-field v-if="!pickerhide" label="Select a date">
+    <b-datepicker placeholder="Click to select..." icon="calendar-today"></b-datepicker>
+  </b-field>
+  <b-field v-if="!pickerhide" label="Select a time">
+    <b-timepicker placeholder="Click to select..."  icon="clock"></b-timepicker>
+  </b-field>
+</div>
+
+  <button>Find</button>
+
+  <div>Searching for a Walker...</div>
+
+<script>
+  new Vue({
+    el: '#Doggy',
+    data: {
+      time: "",
+      pickerhide: true,
+    }
+   })
+</script>
