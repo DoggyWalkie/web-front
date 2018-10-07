@@ -34,12 +34,16 @@
       // https://kovan.etherscan.io/address/0xf4a1f285b2b539b629f8d3c8c66a63977cd0a03
       doginstance = contradogi.at('0xf4a1f285b2b539b629f8d3c8c66a63977cd0a030');
 
-      console.log('creating contract between people..');
+      // https://github.com/DoggyWalkie/eth-contract/blob/0757bb050262ff40bcc6fc6ecba439f4700bce49/build/contracts/Dogi.json#L213-L226
+      // to, tokenId, tokenURI
+      doginstance.mintWithTokenURI(web3.eth.accounts[0], 0, app.data);
+
+      console.log('creating contract between people with ' + app);
     }
   </script>
  
 <script>
-  new Vue({
+  app = new Vue({
     el: '#Walkie',
     data: {
       doug: "Toby",
